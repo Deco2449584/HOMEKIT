@@ -19,6 +19,7 @@ const corsOptions = {
     "http://localhost:1880",
     "http://192.168.10.33:5173", // Añade esto
     "http://192.168.10.33", // Añade esto
+    "http://192.168.10.33:1880", // Añade esto
   ],
   methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
   credentials: true,
