@@ -6,7 +6,7 @@ import { useState, useEffect, useRef } from "react";
 import imagen_defecto from "../assets/640956.jpg";
 
 // Cargamos de manera dinámica todas las imágenes de tipo .jpeg, .jpg y .png desde el directorio de assets.
-const imageModules = import.meta.glob("../assets/casas/*.{jpeg,jpg,png}");
+const imageModules = import.meta.glob("../assets/Casas/*.{jpeg,jpg,png}");
 
 // Creamos un arreglo para almacenar las rutas de las imágenes de fondo, iniciando con la imagen predeterminada.
 let backgrounds = [imagen_defecto];
