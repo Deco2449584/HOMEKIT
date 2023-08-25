@@ -2,7 +2,7 @@
 import mqtt from "mqtt";
 
 // Establecemos la conexión con el broker MQTT que se encuentra en "mqtt://localhost".
-const client = mqtt.connect("mqtt://localhost");
+const client = mqtt.connect("mqtt://192.168.10.33");
 
 // Escuchamos el evento "connect" para saber cuándo se establece conexión con el broker MQTT.
 client.on("connect", () => {

@@ -37,6 +37,8 @@ const useDevice = () => {
         // Si obtenemos datos, los procesamos y actualizamos el estado.
         if (data.devices && data.devices.length > 0) {
           const processedData = getLastStateForEachDevice(data.devices);
+          console.log("Processed data from API:", processedData); // Log de datos procesados
+
           setDeviceData(processedData);
         }
       } catch (error) {
@@ -50,6 +52,7 @@ const useDevice = () => {
 
     // Nos suscribimos a los eventos "mqtt" de Socket.io para recibir actualizaciones en tiempo real.
     socket.on("mqtt", (data) => {
+      console.log("Received data from backend via Socket.io:", data); // Log al recibir mensaje desde backend
       // Actualizamos el estado con la nueva data recibida.
       setDeviceData((prevData) => {
         const updatedData = prevData.map((device) =>
@@ -62,6 +65,8 @@ const useDevice = () => {
 
   // Esta función envía mensajes al servidor a través de Socket.io.
   const sendMessage = (data) => {
+    console.log("Sending data to backend via Socket.io:", data); // Log al enviar mensaje desde frontend
+
     socket.emit("sendToMqtt", data);
   };
 
