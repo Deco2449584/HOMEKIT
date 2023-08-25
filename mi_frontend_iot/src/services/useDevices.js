@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 
 // Establecemos la conexión con el servidor a través de Socket.io.
-const socket = io.connect("http://192.168.10.33:3000");
+const socket = io.connect("http://192.168.10.33:3000/api");
 
 // Esta función procesa la lista de dispositivos y devuelve el último estado registrado para cada dispositivo.
 const getLastStateForEachDevice = (devices) => {
@@ -31,7 +31,7 @@ const useDevice = () => {
     // Esta función asincrónica obtiene la data inicial de los dispositivos desde el servidor.
     const fetchInitialData = async () => {
       try {
-        const response = await fetch("http://192.168.10.33:3000/devices");
+        const response = await fetch("http://192.168.10.33:3000/api/devices");
         const data = await response.json();
 
         // Si obtenemos datos, los procesamos y actualizamos el estado.
