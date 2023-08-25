@@ -3,7 +3,7 @@ import "../components/scss/Fondo.scss";
 import { useState, useEffect, useRef } from "react";
 
 // Importamos una imagen predeterminada en caso de que no haya otras imágenes disponibles o haya un error al cargarlas.
-import imagen_defecto from "../assets/casas/370954.jpg";
+import imagen_defecto from "../assets/640956.jpg";
 
 // Cargamos de manera dinámica todas las imágenes de tipo .jpeg, .jpg y .png desde el directorio de assets.
 const imageModules = import.meta.glob("../assets/casas/*.{jpeg,jpg,png}");
